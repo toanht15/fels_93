@@ -5,7 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("header_home_link"), root_path %></li>
         <li><%= link_to t("header_help_link"), about_path %></li>
-        <li><%= link_to t("header_users_link"), "#" %></li>
+        <li><%= link_to t("header_users_link"), users_path %></li>
         <li><%= link_to t("header_sign_in_link"), "#" %></li>
         <li><%= link_to t("header_sign_up_link"), signup_path %></li>
       <li class="dropdown">
@@ -14,7 +14,7 @@
         </a>
         <ul class="dropdown-menu">
           <li><%= link_to t("header_account_profile"), "#" %></li>
-          <li><%= link_to t("header_account_settings"), "#" %></li>
+          <li><%= link_to t("header_account_settings"), edit_user_path(current_user) %></li>
           <li class="divider"></li>
           <li>
             <%= link_to t("header_account_logout"), "#" %>

@@ -47,3 +47,12 @@ en:
   error: "error"
   form_error: "The form contains "
   confirmation: "Confirmation"
+  save: "Save"
+  confirm: "Are your sure?"
+  user:
+    new: "New user"
+    edit: "Edit profile"
+    index: "All user"
+    updated: "Profile updated"
+    login: "Please login"
+    delete: "delete"
