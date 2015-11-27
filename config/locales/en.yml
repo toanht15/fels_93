@@ -42,3 +42,8 @@ en:
   contact_title: "Contact"
   contact_par: "This is the contact pages for the E-Learning System."
   footer_title: "The E-Learning Systemm by fels_93 team"
+  signup: "Sign up"
+  create_account: "Create my account"
+  error: "error"
+  form_error: "The form contains "
+  confirmation: "Confirmation"
