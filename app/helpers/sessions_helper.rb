@@ -25,6 +25,16 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def admin_user
+    if !current_user.nil? && current_user.admin_digest?
+      @admin_user = current_user
+    end
+  end
+
+  def admin_check?
+     !admin_user.nil?
+  end
+
   def forget user
     user.forget
     cookies.delete :user_id
