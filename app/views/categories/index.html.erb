@@ -1,0 +1,24 @@
+<% provide :title, t("categories") %>
+<h1><%= t "categories" %></h1>
+<div id="wrapper">
+  <div class="content container">
+    <div class="row exam">
+      <div class="col-md-10 col-md-offset-1">
+        <h3><%= t "categories_list" %></h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="created_date"><%= t "categories_create" %></th>
+              <th class="name"><%= t "categories_name" %></th>
+              <th class="des"><%= t "categories_des" %></th>
+              <th class=""></th>
+            </tr>
+          </thead>
+          <tbody>
+             <%= render @categories %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
