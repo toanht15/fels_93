@@ -1,0 +1,23 @@
+<%= form_tag words_path, method: :get, class: "form-horizontal col-md-6" do %>
+  <div class="form-group">
+    <div class="col-sm-60">
+      <span>
+        <h3><%= t "admin_category" %></h3>
+        <caption>
+          <%= select_tag :category_id, options_from_collection_for_select(@categories,
+            "id", "name", params[:category_id]), class: "form-control" %>
+        </caption>
+        <h3><%= t "status" %></h3>
+        <caption>
+          <%= select_tag :condition, options_for_select([t("word_learned1"), t("word_notlearned1"),
+            t("word_all")], selected: :option), class: "form-control" %>
+        </caption>
+      </span>
+    </div>
+    <center>
+      <div class = "button">
+        <%= submit_tag t("filter"), class: "btn btn-lg btn-primary" %>
+      </div>
+    </center>
+  </div>
+<% end %>

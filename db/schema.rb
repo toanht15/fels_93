@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126182526) do
+ActiveRecord::Schema.define(version: 20151202031804) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "activity"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20151126182526) do
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "word_id"
+    t.boolean  "correct"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -77,13 +79,11 @@ ActiveRecord::Schema.define(version: 20151126182526) do
 
   create_table "words", force: :cascade do |t|
     t.string   "content"
-    t.integer  "answer_id"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "words", ["answer_id"], name: "index_words_on_answer_id"
   add_index "words", ["category_id"], name: "index_words_on_category_id"
 
 end
