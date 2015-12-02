@@ -1,0 +1,8 @@
+<tr>
+  <td><%= category.created_at.strftime t("time") %></td>
+  <td><%= category.name %></td>
+  <td><%= category.description %></td>
+  <td>
+    <%= link_to t("categories_btn_start"), "#" , class: "btn btn-primary btn-xs" %>
+  </td>
+  </tr>
