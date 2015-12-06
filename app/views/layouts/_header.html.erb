@@ -20,8 +20,8 @@
             <%= t "header_account_title" %><b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to t("header_account_profile"), "#" %></li>
-            <li><%= link_to t("header_account_settings"), "#" %></li>
+            <li><%= link_to t("header_account_profile"), user_path(current_user) %></li>
+            <li><%= link_to t("header_account_settings"), edit_user_path(current_user) %></li>
             <li class="divider"></li>
             <li>
               <%= link_to t("header_account_logout"), logout_path,  method: "delete" %>

@@ -54,4 +54,7 @@ en:
   update_succesfull: "Update Susscesful"
   please_login: "Please log in"
   time: "%Y-%m-%d %H:%M:%S"
-
+  save: "Save"
+  user_edit_profile: "Edit Profile"
+  updated: "Updated"
+  change: "Change"
