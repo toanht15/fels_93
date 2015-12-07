@@ -1,0 +1,26 @@
+<% provide :title, t("word") %>
+<h1><%= t "word_list" %></h1>
+<div class="row">
+  <aside class="col-md-5">
+    <div class="row">
+      <%= render "filter_form" %>
+    </div>
+  </aside>
+</div>
+<div class="row">
+<br>
+<% if @words %>
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th><%= t "id" %></th>
+        <th><%= t "word" %></th>
+        <th><%= t "answer" %></th>
+      </tr>
+    </thead>
+    <tbody id="words">
+      <%= render @words %>
+    </tbody>
+  </table>
+<% end %>
+</div>
