@@ -1,0 +1,11 @@
+<tr>
+  <td><%= category.created_at.strftime t("time") %></td>
+  <td><%= category.name %></td>
+  <td><%= category.description %></td>
+  <td>
+    <%= link_to t("categories_btn_start"), "#" , class: "btn btn-primary btn-xs" %>
+    <%= link_to t("categories_btn_edit"), edit_admin_category_path(category), class: "btn btn-primary btn-xs" %>
+    <%= link_to t("categories_btn_delete"), admin_category_path(category), class: "btn btn-primary btn-xs",
+      method: :delete, data: {confirm: t("you_sure")} %>
+  </td>
+</tr>

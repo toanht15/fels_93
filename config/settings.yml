@@ -2,3 +2,4 @@ size: 50
 word_all: "all"
 word_learned: "learned"
 word_notlearned: "notlearned"
+number_answer: 4
