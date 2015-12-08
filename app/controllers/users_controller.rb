@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:update, :edit]
+  before_action :logged_in_user
   before_action :load_user, except: [:index, :new, :create]
   before_action :correct_user, only: [:edit, :update]
 

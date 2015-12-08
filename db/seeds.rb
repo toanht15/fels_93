@@ -19,6 +19,13 @@ users.each{|user|
   end
 }
 
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
+
 15.times do |n|
   name = "Basic #{n+1}"
   des = "study with me"

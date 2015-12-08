@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout"  => "sessions#destroy"
 
-  resources :users, except: :destroy
+  resources :users, except: :destroy do
+    get "/:relationship" => "relationships#index", as: :relationship,
+      constraints: {relationship: /(following|followers)/}
+  end
+  resources :relationships, only: [:create, :destroy]
   resources :categories, only: [:index]
   resources :words
 
