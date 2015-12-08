@@ -72,3 +72,8 @@ en:
   word_list: "Word List"
   word: "Word"
   answer: "Answer"
+  create_word: "Create Word"
+  create_new_word: "Create New Word"
+  updated_word: "Update Word"
+  create_succesfull: "Create word susscesful"
+  error_create_word: "Invalid word/Invalid answer"

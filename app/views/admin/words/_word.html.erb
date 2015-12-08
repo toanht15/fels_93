@@ -1,0 +1,14 @@
+<tr>
+  <td><%= word.id %></td>
+  <td><%= word.content %></td>
+  <td>
+    <% word.answers.each do |answer| %>
+      <%= answer.content if answer.correct %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to t("categories_btn_edit"), edit_admin_word_path(word), class: "btn btn-primary" %>
+    <%= link_to t("categories_btn_delete"), admin_word_path(word), class: "btn btn-primary",
+      method: :delete, data: {confirm: t("you_sure")} %>
+  </td>
+</tr>

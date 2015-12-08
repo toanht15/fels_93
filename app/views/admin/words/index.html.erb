@@ -1,0 +1,22 @@
+<% provide :title, t("word") %>
+<h1><%= t "word_list" %></h1>
+<div class="row">
+  <%= link_to t("categories_new"), new_admin_word_path , class: "btn btn-success button" %>
+</div>
+<br>
+<% if @words %>
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th><%= t "id" %></th>
+        <th><%= t "word" %></th>
+        <th><%= t "answer" %></th>
+        <th><%= t "status" %></th>
+      </tr>
+    </thead>
+    <tbody id="words">
+      <%= render @words %>
+    </tbody>
+  </table>
+  <%= will_paginate %>
+<% end %>
