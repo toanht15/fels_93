@@ -20,3 +20,10 @@
   </table>
   <%= will_paginate %>
 <% end %>
+<div class="row">
+<h3><%= t "import_csv_title" %></h3>
+  <%= form_tag admin_imports_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag t("import_csv") %>
+  <% end %>
+</div>
