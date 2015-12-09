@@ -1,0 +1,4 @@
+content_word,category_id,content_answer1,correct1,content_answer2,correct2,content_answer3,correct3,content_answer4,correct4
+日本語,1,tiengna,true,tiengnga,false,tiengviet,false,tiengtrung,false
+週間,2,cuoituan,true,cuoithang,false,cuoinam,false,cuoidoi,false
+週末,1,cuoithang,true,giuathang,false,giuaki,false,giuanam,false

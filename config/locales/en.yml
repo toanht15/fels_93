@@ -77,3 +77,6 @@ en:
   updated_word: "Update Word"
   create_succesfull: "Create word susscesful"
   error_create_word: "Invalid word/Invalid answer"
+  import_csv_title: "Import a CSV File"
+  import_csv: "Import CSV"
+  import_suscess: "Word imported."
