@@ -24,11 +24,13 @@ ActiveRecord::Schema.define(version: 20151202031804) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
+    t.boolean  "correct"
+    t.integer  "word_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "word_id"
-    t.boolean  "correct"
   end
+
+  add_index "answers", ["word_id"], name: "index_answers_on_word_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -54,6 +56,10 @@ ActiveRecord::Schema.define(version: 20151202031804) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "results", force: :cascade do |t|
     t.integer  "lesson_id"

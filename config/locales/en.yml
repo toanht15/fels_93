@@ -80,3 +80,8 @@ en:
   import_csv_title: "Import a CSV File"
   import_csv: "Import CSV"
   import_suscess: "Word imported."
+  following: "following"
+  followers: "followers"
+  follow: "Follow"
+  unfollow: "Unfollow"
+  view_profile: "View my profile"
