@@ -1,0 +1,26 @@
+<% provide :title, "Lesson-#{@lesson.category.name}" %>
+<h1><%= @lesson.category.name %></h1>
+
+<%= form_for [@lesson.category, @lesson] do |f| %>
+  <%= f.fields_for :results do |builder| %>
+    <div class ="row">
+      <aside class ="col-md-4">
+        <h3><%= builder.object.word.content %></h3>
+      </aside>
+      <aside class="col-md-8">
+      <% builder.object.word.answers.each do |answer| %>
+          <div class = "radio" %>
+            <div class = "col-md-2">
+              <%= builder.radio_button :answer_id, answer.id %>
+            </div>
+            <div class="col-md-2">
+              <%= label :answer_id, answer.content %>
+            </div>
+          </div>
+          <% end %>
+      </aside>
+    </div>
+    <hr>
+  <% end %>
+  <%= f.submit t("submit"), class: "btn btn-primary" %>
+<% end %>

@@ -3,3 +3,4 @@ word_all: "all"
 word_learned: "learned"
 word_notlearned: "notlearned"
 number_answer: 4
+words_per_lesson: 10

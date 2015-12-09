@@ -2,6 +2,10 @@ User.create!(name: "Cao-Phuong-Anh", email: "thuanbk56@gmail.com",
   password: "pa0974340719", password_confirmation: "pa0974340719",
   admin_digest: true)
 
+User.create!(name: "Hoang The Toan", email: "thetoanpr04@gmail.com",
+  password: "123456", password_confirmation: "123456",
+  admin_digest: true)
+
 99.times do |n|
   name = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
@@ -46,27 +50,18 @@ categories.each{|category|
   end
 }
 
-words = Word.all
-words.each {|word|
-  content = Faker::Lorem.word
-  correct = true
-  Answer.create!(content: content, correct:correct, word_id:word.id)
-}
-
-3.times do |n|
-  words.each{|word|
+Word.all.each do |n|
+  k = Random.rand(3)+1
+  4.times do |t|
     content = Faker::Lorem.word
-    correct = false
-    Answer.create!(content: content, correct:correct, word_id:word.id)
-  }
-end
-
-lessons = Lesson.order(:created_at).take(5)
-lessons.each{|lesson|
-  category = Category.find_by(id:lesson.category_id)
-  20.times do |n|
-    word = category.words.first
-    word_answer = Answer.where(word_id:word.id).first
-    Result.create!(lesson_id:lesson.id, word_id:word.id, answer_id:word_answer.id)
+    if t == k
+      correct = true
+    else
+      correct = false
+    end
+    Answer.create(
+      content: content,
+      correct: correct,
+      word_id: n.id)
   end
-}
+end
