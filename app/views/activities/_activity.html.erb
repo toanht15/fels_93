@@ -1,0 +1,9 @@
+<li id="activity-<%= activity.id %>">
+  <%= link_to gravatar_for(activity.user), activity.user %>
+  <span class="user">
+    <%= link_to activity.user.name, activity.user %>
+  </span>
+  <span class="content">
+    <%= activity.activity %> - (<%= activity.created_at.strftime t("activity_time") %>)
+  </span>
+</li>

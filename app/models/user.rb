@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
-  has_many :activities
+  has_many :activities, dependent: :destroy
   has_many :lessons
   has_many :categories, through: :lessons
   has_many :active_relationships, class_name: "Relationship",
@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
     def new_token
       SecureRandom.urlsafe_base64
     end
+  end
+
+  def feed
+    Activity.where "user_id in (select followed_id from relationships where follower_id = :user_id) or user_id = :user_id", user_id: id
   end
 
   def remember
