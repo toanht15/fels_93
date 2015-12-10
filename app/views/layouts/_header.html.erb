@@ -4,10 +4,7 @@
     <% if logged_in? %>
       <nav>
         <ul class="nav navbar-nav navbar-left">
-          <% if !admin_check? %>
-            <li><%= link_to t("admin_category"), categories_path %></li>
-            <li><%= link_to t("admin_word"), words_path %></li>
-          <% else %>
+          <% if admin_check? %>
             <li><%= link_to t("admin_category"), admin_categories_path %></li>
             <li><%= link_to t("admin_word"), admin_words_path %></li>
           <% end %>
