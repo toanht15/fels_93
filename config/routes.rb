@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       constraints: {relationship: /(following|followers)/}
   end
   resources :relationships, only: [:create, :destroy]
-  resources :categories, only: [:index]
+  resources :categories, only: :index do
+    resources :lessons
+  end
   resources :words
 
   namespace :admin do

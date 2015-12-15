@@ -1,0 +1,16 @@
+<% provide :title, t("result") %>
+<h1><%= t "result" %></h1>
+<strong><%= t "result_mark" %> </strong>
+<%= @lesson.results.correct_answer.count %>/<%= @lesson.words.count %>
+<div class="row">
+  <aside class="col-md-6 col-md-offset-3">
+    <table class="table">
+      <tr>
+        <th><span>True/False</span></th>
+        <th><span>Word</span></th>
+        <th><span>Your answer</span></th>
+      </tr>
+      <%= render @lesson.results %>
+    </table>
+  </aside>
+</div>
