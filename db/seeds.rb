@@ -21,8 +21,8 @@ users.each{|user|
 
 users = User.order(:created_at).take(6)
 50.times do
-  activity = Faker::Lorem.sentence(5)
-  users.each { |user| user.activities.create!(activity: activity) }
+  activity = Random.new.rand(1..9)
+  users.each { |user| user.activities.create!(target_id: activity) }
 end
 
 users = User.all

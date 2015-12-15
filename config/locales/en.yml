@@ -88,3 +88,4 @@ en:
   activity_time: "%Y/%m/%d"
   activity_name: "Activities"
   activity_words: "words"
+  activity_action: "Learned 20 words in Lesson"
