@@ -14,15 +14,6 @@ User.create!(name: "Hoang The Toan", email: "thetoanpr04@gmail.com",
     password_confirmation: password)
 end
 
-users = User.order(:created_at).take(2)
-users.each{|user|
-  10.times do |n|
-    content = Random.new.rand(4..20)
-    category_id = Random.new.rand(1..5)
-    Lesson.create!(user_id:user.id, category_id:category_id, content:content)
-  end
-}
-
 users = User.order(:created_at).take(6)
 50.times do
   activity = Random.new.rand(1..9)
@@ -65,3 +56,12 @@ Word.all.each do |n|
       word_id: n.id)
   end
 end
+
+users = User.order(:created_at).take(2)
+users.each{|user|
+  10.times do |n|
+    content = Random.new.rand(4..20)
+    category_id = Random.new.rand(1..5)
+    Lesson.create!(user_id:user.id, category_id:category_id, content:content)
+  end
+}

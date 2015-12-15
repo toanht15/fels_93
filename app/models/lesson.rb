@@ -10,10 +10,15 @@ class Lesson < ActiveRecord::Base
   validates :category_id, presence: true
 
   before_create :get_words
+  after_update :save_activity
 
   private
   def get_words
     words = category.words.order("RANDOM()").limit(10)
     words.each{|word| results.build word: word}
+  end
+
+  def save_activity
+    Activity.create! user_id: user_id, target_id: category_id
   end
 end
