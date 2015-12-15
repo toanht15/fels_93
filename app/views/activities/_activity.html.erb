@@ -4,6 +4,7 @@
     <%= link_to activity.user.name, activity.user %>
   </span>
   <span class="content">
-    <%= activity.activity %> - (<%= activity.created_at.strftime t("activity_time") %>)
+    <%= t "activity_action" %> "<%= get_category(activity.target_id).name %>"
+      - (<%= activity.created_at.strftime t("activity_time") %>)
   </span>
 </li>

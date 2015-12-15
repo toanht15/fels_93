@@ -67,4 +67,8 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
+
+  def get_category category_id
+    Category.find_by id: category_id
+  end
 end
